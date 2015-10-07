@@ -1489,7 +1489,11 @@ extern "C" int lime_opengl_register_prims ();
 extern "C" int lime_register_prims () {
 	
 	lime_cairo_register_prims ();
-	lime_curl_register_prims ();
+    
+    #ifdef LIME_CURL
+        lime_curl_register_prims ();
+    #endif
+    
 	lime_openal_register_prims ();
 	lime_opengl_register_prims ();
 	

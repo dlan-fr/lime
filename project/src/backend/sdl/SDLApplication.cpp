@@ -23,11 +23,15 @@ namespace lime {
 	
 	SDLApplication::SDLApplication () {
 		
-		if (SDL_Init (SDL_INIT_VIDEO | SDL_INIT_GAMECONTROLLER | SDL_INIT_TIMER | SDL_INIT_JOYSTICK) != 0) {
-			
+        #ifdef EMSCRIPTEN
+		if (SDL_Init (SDL_INIT_VIDEO | SDL_INIT_GAMECONTROLLER | SDL_INIT_JOYSTICK) != 0) {
+		#else
+        if (SDL_Init (SDL_INIT_VIDEO | SDL_INIT_GAMECONTROLLER | SDL_INIT_TIMER | SDL_INIT_JOYSTICK) != 0) {
+        #endif
 			printf ("Could not initialize SDL: %s.\n", SDL_GetError ());
 			
 		}
+        
 		
 		currentApplication = this;
 		
