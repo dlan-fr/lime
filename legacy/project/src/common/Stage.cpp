@@ -635,6 +635,11 @@ void Stage::setDisplayState(int inDisplayState)
    SetFullscreen(inDisplayState>0);
 }
 
+void Stage::setMinimumSize(int minwidth,int minheight)
+{
+    SetMinSize(minwidth,minheight);
+}
+
 
 Matrix Stage::GetFullMatrix(bool inStageScaling)
 {

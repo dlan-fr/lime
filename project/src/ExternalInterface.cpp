@@ -1331,6 +1331,11 @@ namespace lime {
 		return targetWindow->SetFullscreen (fullscreen);
 		
 	}
+    
+    void lime_window_setminimumsize(value window,int mwidth,int mheight) {
+        Window* targetWindow = (Window*)val_data (window);
+		targetWindow->SetMinSize (fullscreen,int mwidth,int mheight);
+    }
 	
 	
 	void lime_window_set_icon (value window, value buffer) {
@@ -1471,6 +1476,7 @@ namespace lime {
 	DEFINE_PRIME3v (lime_window_resize);
 	DEFINE_PRIME2v (lime_window_set_enable_text_events);
 	DEFINE_PRIME2 (lime_window_set_fullscreen);
+    DEFINE_PRIM3 (lime_window_setminimumsize);
 	DEFINE_PRIME2v (lime_window_set_icon);
 	DEFINE_PRIME2 (lime_window_set_minimized);
 	DEFINE_PRIME2 (lime_window_set_title);

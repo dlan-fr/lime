@@ -146,6 +146,7 @@ DEFINE_LIME_LEGACY_PRIM_3(stage_resize_window);
 DEFINE_LIME_LEGACY_PRIM_3(stage_set_resolution);
 DEFINE_LIME_LEGACY_PRIM_5(stage_set_screenmode);
 DEFINE_LIME_LEGACY_PRIM_2(stage_set_fullscreen);
+DEFINE_LIME_LEGACY_PRIM_3(stage_set_minimumsize);
 DEFINE_LIME_LEGACY_PRIM_1(stage_get_focus_id);
 DEFINE_LIME_LEGACY_PRIM_3(stage_set_focus);
 DEFINE_LIME_LEGACY_PRIM_2(stage_get_joystick_name);

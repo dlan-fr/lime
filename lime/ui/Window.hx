@@ -102,6 +102,10 @@ class Window {
 		
 	}
 	
+	public function setminimumsize(minwidth:Int, minheight:Int):Void {
+		backend.setMinimumSize(minwidth, minheight);
+	}
+	
 	
 	public function close ():Void {
 		

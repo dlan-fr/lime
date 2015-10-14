@@ -225,6 +225,19 @@ class NativeWindow {
 		
 	}
 	
+	public function setMinimumSize(minwidth:Int,minheight:Int):Bool {
+		
+		if (handle != null) {
+			
+			#if !macro
+			value = lime_window_setminimumsize (handle, minwidth,minheight);
+			#end
+			
+			
+		}
+		
+	}
+	
 	
 	public function setIcon (image:Image):Void {
 		
@@ -287,6 +300,7 @@ class NativeWindow {
 	@:cffi private static function lime_window_set_icon (handle:Dynamic, buffer:Dynamic):Void;
 	@:cffi private static function lime_window_set_minimized (handle:Dynamic, minimized:Bool):Bool;
 	@:cffi private static function lime_window_set_title (handle:Dynamic, title:String):Dynamic;
+	@:cffi private static function lime_window_set_minimumsize(handle:Dynamic, width:Int, height:Int);
 	#end
 	
 	

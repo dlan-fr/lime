@@ -306,6 +306,7 @@ public:
       mWidth = inWidth;
       mHeight = inHeight;
       
+      
       if (mIsOpenGL)
       {
          mOpenGLContext->SetWindowSize(inWidth, inHeight);
@@ -328,6 +329,7 @@ public:
    
    void ResizeWindow(int inWidth, int inHeight)
    {
+   
       if (mIsFullscreen)
       {
          SDL_DisplayMode mode;
@@ -342,6 +344,11 @@ public:
       {
          SDL_SetWindowSize(mSDLWindow, inWidth, inHeight);
       }
+   }
+   
+   void SetMinSize(int minWidth,int minHeight) 
+   { 
+     SDL_SetWindowMinimumSize(mSDLWindow,minWidth,minHeight);
    }
    
    
@@ -752,6 +759,7 @@ public:
    unsigned int mWindowFlags;
    int          mWidth;
    int          mHeight;
+   
 };
 
 

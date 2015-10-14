@@ -1482,6 +1482,20 @@ value nme_stage_set_fullscreen(value inStage, value inFull)
 }
 DEFINE_PRIM(nme_stage_set_fullscreen,2);
 
+value nme_stage_set_minimumsize(value inStage,value inMinW,value inMinH)
+{
+   #if (defined(HX_WINDOWS) || defined(HX_MACOS) || defined(HX_LINUX))
+   Stage *stage;
+   if (AbstractToObject(inStage,stage))
+   {
+      stage->setMinimumSize(val_int(inMinW),val_int(inMinH));
+   }
+   #endif
+   return alloc_null();
+}
+
+DEFINE_PRIM(nme_stage_set_minimumsize,3);
+
 
 value nme_stage_get_focus_id(value inValue)
 {
